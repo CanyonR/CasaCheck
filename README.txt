@@ -57,7 +57,7 @@ process continues to run.
 
 6. About the Author
     Canyon Read
-        B.A. Strategic Communication - Washington Sate University
         4+ Years in customer-facing tech industry roles
+        B.A. Strategic Communication - Washington Sate University
         Brazilian Jiu-Jitsu White Belt
         San Jose, California, United States of America

@@ -1,0 +1,2 @@
+Temp cStatus
+Temp tStamp

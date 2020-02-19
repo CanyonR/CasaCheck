@@ -4,8 +4,8 @@ import random
 
 def timestamp():
     """Generate a timestamp to be used in records."""
-     tstamp = datetime.datetime.now().strftime("%Y-%b-%d | %H:%M:%S")
-     return tstamp
+    stamp = datetime.datetime.now().strftime("%Y-%b-%d | %H:%M:%S")
+    return stamp
 
 
 def mail_sensor():
@@ -66,7 +66,7 @@ def write_status(location, detection):
         status = mail_status(detection)
         return status
     elif location == "cars":
-        status = cars_sensor_status(detection)
+        status = cars_status(detection)
         return status
     else:
         return f"-ERR- location '{location}'"
@@ -79,24 +79,24 @@ def determine(location):
     return status
 
 
-def log(timestamp, mail_status, cars_status):
+def log(time_stamp, mail_stat, cars_stat):
     """Write timestamp and location statuses to a log file."""
     with open('log.txt','a') as log:
-        log.write('\n' + timestamp + " | MAIL: " + mail_status + " | CARS: " + cars_status)
+        log.write('\n' + time_stamp + " | MAIL: " + mail_stat + " | CARS: " + cars_stat)
 
 
-def store(location, status, timestamp):
+def store(location, status, time_stamp):
     """Writes status and timestamp to a "current" file
     for an outside program to reference."""
     with open(f'{location}_cur.txt','w') as current_file:
-    	current_file.write(status + '\n' + timestamp)
+    	current_file.write(status + '\n' + time_stamp)
 
 
 def main():
-    timestamp = timestamp()
-    mail_status = determine("mail")
-    cars_status = determine("cars")
-    log(timestamp,mail_status,cars_status)
-    store("mail",mail_status,timestamp)
-    store("cars",cars_status,timestamp)
+    time_stamp = timestamp()
+    mail_stat = determine("mail")
+    cars_stat = determine("cars")
+    log(time_stamp,mail_stat,cars_stat)
+    store("mail",mail_stat,time_stamp)
+    store("cars",cars_stat,time_stamp)
     # To Be Added: "If 'status' starts with -ERR-, print(status)"

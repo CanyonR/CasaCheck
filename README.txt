@@ -51,13 +51,12 @@ process continues to run.
 
 5. Instructions:
     + Run 'loop.py' to start the sensing/logging/saving process
-        - When prompted, enter the desired interval (in seconds)
+        - When prompted, enter the desired sensor-reading interval (in seconds)
     + Run 'casa.py' to display the most recent statuses and timestamps
 
 
 6. About the Author
     Canyon Read
-        4+ Years in customer-facing tech industry roles
+        CompTIA Network+ Certified
         B.A. Strategic Communication - Washington Sate University
-        Brazilian Jiu-Jitsu White Belt
         San Jose, California, United States of America

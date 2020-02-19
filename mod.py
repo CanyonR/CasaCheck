@@ -79,10 +79,10 @@ def determine(location):
     return status
 
 
-def log(tstamp, mStatus, cStatus):
+def log(tstamp, mstat, cstat):
 # Writes timestamp and location statuses to a log file
     with open('log.txt','a') as log:
-        log.write('\n' + tstamp + " | MAIL: " + mStatus + " | CARS: " + cStatus)
+        log.write('\n' + tstamp + " | MAIL: " + mstat + " | CARS: " + cstat)
 
 
 def store(location, status, tstamp):
@@ -94,9 +94,9 @@ def store(location, status, tstamp):
 
 def main():
     tstamp = timestamp()
-    mStatus = determine("mail")
-    cStatus = determine("cars")
-    log(tstamp,mStatus,cStatus)
-    store("mail",mStatus,tstamp)
-    store("cars",cStatus,tstamp)
+    mstat = determine("mail")
+    cstat = determine("cars")
+    log(tstamp,mstat,cstat)
+    store("mail",mstat,tstamp)
+    store("cars",cstat,tstamp)
     # To Be Added: "If 'status' starts with -ERR-, print(status)"

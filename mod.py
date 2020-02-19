@@ -57,7 +57,7 @@ def read_sensor(location):
         detection = c_sensor()
         return detection
     else:
-        return "no sensor installed for location '{}'".format(location)
+        return f"no sensor installed for location '{location}'"
 
 
 def write_status(location, detection):
@@ -69,7 +69,7 @@ def write_status(location, detection):
         status = c_status(detection)
         return status
     else:
-        return "-ERR- location '{}' unknown".format(location)
+        return f"-ERR- location '{location}'"
 
 
 def determine(location):
@@ -88,7 +88,7 @@ def log(tstamp, mStatus, cStatus):
 def store(location, status, tstamp):
 # Writes status and timestamp to a "current" file
 # for an outside program to reference
-    with open('{}_cur.txt'.format(location),'w') as cur:
+    with open(f'{location}_cur.txt','w') as cur:
     	cur.write(status + '\n' + tstamp)
 
 

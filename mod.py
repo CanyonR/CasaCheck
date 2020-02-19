@@ -57,7 +57,7 @@ def read_sensor(location):
         detection = c_sensor()
         return detection
     else:
-        return "no sensor installed for location '{}'".format(location)
+        return f"no sensor installed for location '{location}'"
 
 
 def write_status(location, detection):
@@ -69,7 +69,7 @@ def write_status(location, detection):
         status = c_status(detection)
         return status
     else:
-        return "-ERR- location '{}' unknown".format(location)
+        return f"-ERR- location '{location}'"
 
 
 def determine(location):
@@ -79,24 +79,24 @@ def determine(location):
     return status
 
 
-def log(tstamp, mStatus, cStatus):
+def log(tstamp, mstat, cstat):
 # Writes timestamp and location statuses to a log file
     with open('log.txt','a') as log:
-        log.write('\n' + tstamp + " | MAIL: " + mStatus + " | CARS: " + cStatus)
+        log.write('\n' + tstamp + " | MAIL: " + mstat + " | CARS: " + cstat)
 
 
 def store(location, status, tstamp):
 # Writes status and timestamp to a "current" file
 # for an outside program to reference
-    with open('{}_cur.txt'.format(location),'w') as cur:
+    with open(f'{location}_cur.txt','w') as cur:
     	cur.write(status + '\n' + tstamp)
 
 
 def main():
     tstamp = timestamp()
-    mStatus = determine("mail")
-    cStatus = determine("cars")
-    log(tstamp,mStatus,cStatus)
-    store("mail",mStatus,tstamp)
-    store("cars",cStatus,tstamp)
+    mstat = determine("mail")
+    cstat = determine("cars")
+    log(tstamp,mstat,cstat)
+    store("mail",mstat,tstamp)
+    store("cars",cstat,tstamp)
     # To Be Added: "If 'status' starts with -ERR-, print(status)"

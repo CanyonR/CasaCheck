@@ -50,7 +50,7 @@ process continues to run.
 
 
 5. Instructions:
-    + If you want to have the log and {location}_cur files,
+    + If you want to move the log and {location}_cur files,
         the file-paths can be adjusted in log() and store() in mod.py.
     + Run 'loop.py' to start the sensing/logging/saving process.
         - When prompted, enter the desired interval (in seconds).

@@ -5,15 +5,13 @@ import random
 def mail_sensor():
     """Randomly choose from a list
     (instead of checking the output from physical sensor, as is planned)."""
-    detection = random.choice([0,1])
-    return detection
+    return random.choice([0,1])
 
 
 def cars_sensor():
     """Randomly choose from a list
     (instead of checking the output from physical sensor, as is planned)."""
-    detection = random.choice([0,1,2])
-    return detection
+    return random.choice([0,1,2])
 
 
 def mail_status(detection):
@@ -43,11 +41,9 @@ def cars_status(detection):
 def read_sensor(location):
     """Choose which sensor to reference and return the detection."""
     if location == "mail":
-        detection = mail_sensor()
-        return detection
+        return mail_sensor()
     elif location == "cars":
-        detection = cars_sensor()
-        return detection
+        return cars_sensor()
     else:
         return f"no sensor installed for location '{location}'"
 
@@ -55,11 +51,9 @@ def read_sensor(location):
 def write_status(location, detection):
     """Choose which status writer to employ."""
     if location == "mail":
-        status = mail_status(detection)
-        return status
+        return mail_status(detection)
     elif location == "cars":
-        status = cars_status(detection)
-        return status
+        return cars_status(detection)
     else:
         return f"-ERR- location '{location}'"
 
@@ -67,8 +61,7 @@ def write_status(location, detection):
 def determine(location):
     """Return the named status of location based off sensor's detection."""
     detection = read_sensor(location)
-    status = write_status(location, detection)
-    return status
+    return write_status(location, detection)
 
 
 def log(time_stamp, mail_stat, cars_stat):
@@ -91,4 +84,4 @@ def main():
     log(time_stamp,mail_stat,cars_stat)
     store("mail",mail_stat,time_stamp)
     store("cars",cars_stat,time_stamp)
-    
+

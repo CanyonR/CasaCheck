@@ -4,8 +4,8 @@
    |--------------|
    |  CASA CHECK  |
    |--------------|
-   |   v 0.1.1    |
-   |  2020-02-18  |
+   |   v 0.1.2    |
+   |  2020-02-20  |
 ----------------------
 ----------------------
 
@@ -16,6 +16,7 @@
     4. Requirements
     5. Instructions
     6. About the Author
+    7. To-Do List
 
 
 2. About the Program
@@ -46,13 +47,14 @@ process continues to run.
         - datetime
         - random
         - time
-    + All files must be in the same folder
 
 
 5. Instructions:
-    + Run 'loop.py' to start the sensing/logging/saving process
-        - When prompted, enter the desired sensor-reading interval (in seconds)
-    + Run 'casa.py' to display the most recent statuses and timestamps
+    + If you want to have the log and {location}_cur files,
+        the file-paths can be adjusted in log() and store() in mod.py.
+    + Run 'loop.py' to start the sensing/logging/saving process.
+        - When prompted, enter the desired interval (in seconds).
+    + Run 'casa.py' to display the most recent statuses and timestamps.
 
 
 6. About the Author
@@ -60,3 +62,8 @@ process continues to run.
         CompTIA Network+ Certified
         B.A. Strategic Communication - Washington Sate University
         San Jose, California, United States of America
+
+
+7. To-Do List
+    o Read from physical IR sensors instead of random num generators
+    o Print error messages to the terminal

@@ -2,25 +2,17 @@ import datetime
 import random
 
 
-def timestamp():
-    """Generate a timestamp to be used in records."""
-    stamp = datetime.datetime.now().strftime("%Y-%b-%d | %H:%M:%S")
-    return stamp
-
-
 def mail_sensor():
     """Randomly choose from a list
     (instead of checking the output from physical sensor, as is planned)."""
-    opts = [0,1]
-    detection = random.choice(opts)
+    detection = random.choice([0,1])
     return detection
 
 
 def cars_sensor():
     """Randomly choose from a list
     (instead of checking the output from physical sensor, as is planned)."""
-    opts = [0,1,2]
-    detection = random.choice(opts)
+    detection = random.choice([0,1,2])
     return detection
 
 
@@ -93,10 +85,10 @@ def store(location, status, time_stamp):
 
 
 def main():
-    time_stamp = timestamp()
+    time_stamp = datetime.datetime.now().strftime("%Y-%b-%d | %H:%M:%S")
     mail_stat = determine("mail")
     cars_stat = determine("cars")
     log(time_stamp,mail_stat,cars_stat)
     store("mail",mail_stat,time_stamp)
     store("cars",cars_stat,time_stamp)
-    # To Be Added: "If 'status' starts with -ERR-, print(status)"
+    

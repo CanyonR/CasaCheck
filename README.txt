@@ -4,8 +4,8 @@
    |--------------|
    |  CASA CHECK  |
    |--------------|
-   |   v 0.1.2    |
-   |  2020-02-20  |
+   |   v 0.2.0    |
+   |  2020-02-23  |
 ----------------------
 ----------------------
 
@@ -20,14 +20,11 @@
 
 
 2. About the Program
-    The end-goal is to use infrared (IR) sensors to check a house's
-mailbox and carpark at a desired interval and concurrently allow a
-website to display the most recent results. This version currently uses
-simple random number functions as placeholders for physical sensors.
-
+    Uses infrared (IR) sensors to check a house's mailbox and carpark
+at a desired interval.
     When the mailbox and carpark sensors are checked, the timestamp
 and status of each location is logged and saved to separate .txt files.
-The {location}_cur.txt files can then be refereced while the main
+The most recent results can then be refereced while the main
 process continues to run.
 
 
@@ -36,22 +33,24 @@ process continues to run.
     + log.txt
     + mail_cur.txt
     + cars_cur.txt
-    + mod.py
     + loop.py
     + check.py
     + casa.py
 
 
 4. Requirements:
+    + Raspberry Pi
     + Python 3 (developed in 3.7.4)
+        Modules:
         - datetime
-        - random
         - time
+        - RPi.GPIO
 
 
 5. Instructions:
     + If you want to move the log and {location}_cur files,
-        the file-paths can be adjusted in log() and store() in mod.py.
+        the file-paths can be adjusted in loop.log() and loop.store().
+    + The GPIO pin numbers can be adjusted in loop.GPIOsetup().
     + Run 'loop.py' to start the sensing/logging/saving process.
         - When prompted, enter the desired interval (in seconds).
     + Run 'casa.py' to display the most recent statuses and timestamps.
@@ -65,5 +64,4 @@ process continues to run.
 
 
 7. To-Do List
-    o Read from physical IR sensors instead of random num generators
     o Print error messages to the terminal

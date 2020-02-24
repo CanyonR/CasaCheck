@@ -1,6 +1,6 @@
 import time
 import datetime
-import random
+#import random
 import RPi.GPIO as GPIO
 
 def GPIOsetup():
